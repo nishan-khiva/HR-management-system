@@ -1,5 +1,5 @@
-const Attendance = require('../Models/Attendance');
-const Employee = require('../Models/Employee');
+const Attendance = require('../models/Attendance');
+const Employee = require('../models/Employee');
 
 //  Mark Attendance
 const markAttendance = async (req, res) => {

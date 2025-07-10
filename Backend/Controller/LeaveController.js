@@ -1,5 +1,5 @@
 const Leave = require('../Models/Leaves');
-const Employee = require('../Models/Employee');
+const Employee = require('../models/Employee');
 
 // Create Leave
 const createLeave = async (req, res) => {

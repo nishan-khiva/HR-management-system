@@ -1,5 +1,5 @@
-const Candidate = require('../Models/Candidate');
-const Employee = require('../Models/Employee')
+const Candidate = require('../models/Candidate');
+const Employee = require('../models/Employee')
 
 // Create Candidate with Cloudinary resume
 exports.createCandidate = async (req, res) => {
