@@ -1,0 +1,162 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  margin-bottom: 0;
+  font-family: 'Nunito';
+  
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: semibold;
+  color: #1a1a1a;
+  font-family: 'Nunito';
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-icon {
+  font-size: 26px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.header-icon:hover {
+  color: #4D007D;
+  background: rgba(77, 0, 125, 0.1);
+  transform: scale(1.1);
+}
+
+.profile-dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown-trigger:hover {
+  transform: scale(1.05);
+}
+
+.user-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.user-profile-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4D007D 0%, #6a1b9a 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #e8e8e8;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  font-family: 'Nunito';
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  min-width: 240px;
+  z-index: 1000;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.profile-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  background: rgba(77, 0, 125, 0.02);
+}
+
+.dropdown-profile-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8e8e8;
+}
+
+.dropdown-user-info {
+  flex: 1;
+}
+
+.dropdown-user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  font-family: 'Nunito';
+  margin-bottom: 2px;
+}
+
+.dropdown-user-role {
+  font-size: 12px;
+  color: #666;
+  font-family: 'Nunito';
+}
+
+.profile-dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Nunito';
+}
+
+.profile-dropdown-item:hover {
+  background: rgba(77, 0, 125, 0.05);
+  color: #4D007D;
+}
+
+.profile-dropdown-item:last-child {
+  border-radius: 0 0 16px 16px;
+  color: #f44336;
+}
+
+.profile-dropdown-item:last-child:hover {
+  background: rgba(244, 67, 54, 0.05);
+  color: #d32f2f;
+} 

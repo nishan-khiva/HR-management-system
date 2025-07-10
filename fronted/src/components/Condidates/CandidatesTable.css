@@ -1,0 +1,451 @@
+/* CandidatesTable Component Styles */
+
+/* Table container styling */
+.table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 100%;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.table-container {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+}
+
+/* Table styling */
+.candidates-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 800px;
+  font-family: 'Nunito';
+  background: #ffffff;
+}
+
+.candidates-table th {
+  background: #4D007D;
+  color: #fff;
+  padding: 18px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Nunito';
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  white-space: nowrap;
+}
+
+.candidates-table th:first-child {
+  border-top-left-radius: 16px;
+}
+
+.candidates-table th:last-child {
+  border-top-right-radius: 16px;
+}
+
+.candidates-table td {
+  padding: 18px 16px;
+  color: #333;
+  font-family: 'Nunito';
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+.candidates-table tr:hover td {
+  background-color: #f8f9fa;
+  color: #4B1979;
+}
+
+.candidates-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status select styling */
+.candidates-table select {
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background: #f8f9fa;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Nunito';
+  font-size: 12px;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.candidates-table select:focus {
+  outline: none;
+  border-color: #4D007D;
+  box-shadow: 0 0 0 2px rgba(77, 0, 125, 0.1);
+}
+
+.candidates-table select:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Action menu styling */
+.action-menu-container {
+  position: relative;
+}
+
+.action-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.action-menu-btn:hover {
+  background: rgba(77, 0, 125, 0.1);
+  color: #4D007D;
+  transform: scale(1.1);
+}
+
+.action-menu {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  z-index: 10;
+  min-width: 160px;
+  border: 1px solid #f0f0f0;
+  animation: fadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+/* When menu should appear above the button */
+.action-menu.above {
+  top: auto;
+  bottom: 40px;
+}
+
+.action-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Nunito';
+  font-size: 14px;
+  color: #333;
+}
+
+.action-menu-item:last-child {
+  border-top: 1px solid #f0f0f0;
+}
+
+.action-menu-item:hover {
+  background: #f8f9fa;
+  color: #4D007D;
+}
+
+.action-menu-item.delete {
+  color: #dc3545;
+}
+
+.action-menu-item.delete:hover {
+  background: #fff5f5;
+  color: #dc3545;
+}
+
+/* Animation for menu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empty state styling */
+.empty-state {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #eee;
+  padding: 48px;
+  text-align: center;
+  color: #666;
+  margin: 16px;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state-title {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  font-family: 'Nunito';
+  font-weight: 600;
+}
+
+.empty-state-message {
+  font-size: 16px;
+  margin: 0;
+  font-family: 'Nunito';
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .candidates-table th,
+  .candidates-table td {
+    padding: 14px 12px;
+    font-size: 12px;
+  }
+
+  .candidates-table select {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    margin: 0 4px;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+
+  .candidates-table select {
+    padding: 2px 6px;
+    font-size: 10px;
+    min-width: 60px;
+    max-width: 80px;
+  }
+
+  .action-menu-btn {
+    padding: 4px;
+    font-size: 14px;
+  }
+
+  .action-menu {
+    min-width: 120px;
+    right: -10px;
+  }
+
+  .action-menu-item {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .empty-state {
+    padding: 24px;
+    margin: 8px;
+  }
+
+  .empty-state-icon {
+    font-size: 36px;
+  }
+
+  .empty-state-title {
+    font-size: 18px;
+  }
+
+  .empty-state-message {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .candidates-table th,
+  .candidates-table td {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  .candidates-table select {
+    padding: 2px 4px;
+    font-size: 9px;
+    min-width: 50px;
+    max-width: 70px;
+  }
+
+  .action-menu-btn {
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .action-menu {
+    min-width: 100px;
+    right: -15px;
+  }
+
+  .action-menu-item {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .empty-state {
+    padding: 16px;
+    margin: 4px;
+  }
+
+  .empty-state-icon {
+    font-size: 32px;
+  }
+
+  .empty-state-title {
+    font-size: 16px;
+  }
+
+  .empty-state-message {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .candidates-table {
+    min-width: 600px;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    padding: 6px 4px;
+    font-size: 9px;
+  }
+
+  .candidates-table select {
+    padding: 1px 3px;
+    font-size: 8px;
+    min-width: 40px;
+    max-width: 60px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .candidates-table {
+    border: 0.5px solid #e0e0e0;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    border-bottom: 0.5px solid #f0f0f0;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .candidates-table td,
+  .action-menu-btn,
+  .action-menu-item,
+  .candidates-table select {
+    transition: none;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .candidates-table {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  .candidates-table td {
+    color: #e0e0e0;
+    border-bottom-color: #333;
+  }
+
+  .candidates-table tr:hover td {
+    background-color: #2a2a2a;
+    color: #fff;
+  }
+
+  .action-menu {
+    background: #2a2a2a;
+    border-color: #333;
+  }
+
+  .action-menu-item {
+    color: #e0e0e0;
+  }
+
+  .action-menu-item:hover {
+    background: #3a3a3a;
+    color: #fff;
+  }
+
+  .action-menu-item.delete:hover {
+    background: #3a1a1a;
+  }
+
+  .empty-state {
+    background: #1a1a1a;
+    color: #ccc;
+  }
+}
+
+/* Print styles */
+@media print {
+  .candidates-table {
+    border: 1px solid #000;
+  }
+
+  .candidates-table th,
+  .candidates-table td {
+    border: 1px solid #000;
+    padding: 8px;
+  }
+
+  .action-menu-container,
+  .action-menu-btn,
+  .action-menu {
+    display: none !important;
+  }
+} 

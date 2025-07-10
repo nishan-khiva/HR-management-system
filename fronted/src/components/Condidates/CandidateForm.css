@@ -1,0 +1,583 @@
+.candidate-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.candidate-form-overlay.closing {
+  opacity: 0;
+}
+
+.candidate-form {
+  background: #fff; 
+  border-radius: 12px;
+  width: 1080px;
+  max-width: 95vw;
+  max-height: 90vh;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.candidate-form-overlay.closing .candidate-form {
+  transform: scale(0.9);
+}
+
+.candidate-form-header {
+  background: #4B1979;
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  padding: 16px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidate-form-close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.candidate-form-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.candidate-form-content {
+  padding: 32px;
+  max-height: calc(90vh - 80px);
+  overflow-y: auto;
+}
+
+.candidate-form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.candidate-form-field {
+  flex: 1 1 45%;
+  min-width: 0;
+}
+
+.candidate-form-field.file-input-container {
+  flex: 1 1 45%;
+  min-width: 0;
+}
+
+.candidate-form-field input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #4B1979;
+  font-family: 'Nunito';
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fff;
+  box-sizing: border-box;
+  height: 44px;
+}
+
+.candidate-form-field input:focus {
+  outline: none;
+  border-color: #4B1979;
+  box-shadow: 0 0 0 2px rgba(75, 25, 121, 0.1);
+}
+
+.candidate-form-field select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #4B1979;
+  font-family: 'Nunito';
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fff;
+  box-sizing: border-box;
+  height: 44px;
+  cursor: pointer;
+}
+
+.candidate-form-field select:focus {
+  outline: none;
+  border-color: #4B1979;
+  box-shadow: 0 0 0 2px rgba(75, 25, 121, 0.1);
+}
+
+.candidate-form-field input[type="file"] {
+  padding: 8px;
+  border: 1.5px solid #4B1979;
+  background: #fff;
+  cursor: pointer;
+  border-style: solid;
+}
+
+.candidate-form-field input[type="file"]:hover {
+  border-color: #3a0059;
+  background: rgba(75, 25, 121, 0.05);
+}
+
+.candidate-form-field.file-input-container {
+  position: relative;
+}
+
+.candidate-form-declaration {
+  margin: 24px 0 12px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.candidate-form-declaration label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 1.3;
+  cursor: pointer;
+  font-family: 'Nunito';
+  margin: 0;
+}
+
+.candidate-form-declaration input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.candidate-form-declaration span {
+  white-space: nowrap;
+  color: #555;
+}
+
+.candidate-form-error {
+  color: #666;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-family: 'Nunito';
+}
+
+.candidate-form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.candidate-form-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Nunito';
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 14px;
+  background: #4B1979;
+  color: #fff;
+}
+
+.candidate-form-btn:hover:not(:disabled) {
+  background: #3a0059;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(75, 25, 121, 0.3);
+}
+
+.candidate-form-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.file-input-container {
+  position: relative;
+}
+
+.custom-file-label {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #4B1979;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  color: #222;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  min-height: 44px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: 'Nunito';
+}
+
+.custom-file-label:focus-within {
+  outline: none;
+  border-color: #4B1979;
+  box-shadow: 0 0 0 2px rgba(75, 25, 121, 0.1);
+}
+
+.custom-file-label .required-star {
+  color: #d32f2f;
+  margin-left: 2px;
+}
+
+/* Regular placeholder styling */
+.candidate-form-field input::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+
+/* Make placeholder text with asterisk a subtle red */
+.candidate-form-field input[placeholder*="*"]::placeholder {
+  color: #999;
+  opacity: 0.8;
+}
+
+/* For file input placeholder */
+.custom-file-label .required-star {
+  color: #d32f2f;
+  margin-left: 2px;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.upload-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.file-selected {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #4B1979;
+  font-style: italic;
+  word-break: break-all;
+}
+
+/* Responsive design - Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .candidate-form {
+    width: 90vw;
+    max-height: 85vh;
+  }
+  
+  .candidate-form-content {
+    padding: 24px;
+    max-height: calc(85vh - 80px);
+  }
+  
+  .candidate-form-header {
+    padding: 14px 24px;
+    font-size: 18px;
+  }
+  
+  .candidate-form-fields {
+    gap: 12px;
+  }
+  
+  .candidate-form-field {
+    flex: 1 1 48%;
+  }
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 768px) {
+  .candidate-form-overlay {
+    padding: 16px;
+  }
+  
+  .candidate-form {
+    width: 95vw;
+    max-height: 95vh;
+  }
+  
+  .candidate-form-content {
+    padding: 20px;
+    max-height: calc(95vh - 80px);
+  }
+  
+  .candidate-form-header {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  .candidate-form-close-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+  
+  .candidate-form-fields {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .candidate-form-field {
+    flex: 1 1 100%;
+  }
+  
+  .candidate-form-field input,
+  .candidate-form-field select {
+    height: 40px;
+    font-size: 13px;
+    padding: 10px;
+  }
+  
+  .candidate-form-declaration {
+    margin: 20px 0 12px 0;
+  }
+  
+  .candidate-form-declaration label {
+    font-size: 14px;
+  }
+  
+  .candidate-form-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .candidate-form-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .custom-file-label {
+    padding: 10px;
+    font-size: 13px;
+    min-height: 40px;
+  }
+}
+
+/* Responsive design - Mobile phones */
+@media (max-width: 480px) {
+  .candidate-form-overlay {
+    padding: 8px;
+  }
+  
+  .candidate-form {
+    width: 98vw;
+    max-height: 98vh;
+    border-radius: 8px;
+  }
+  
+  .candidate-form-content {
+    padding: 16px;
+    max-height: calc(98vh - 70px);
+  }
+  
+  .candidate-form-header {
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .candidate-form-close-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+  
+  .candidate-form-fields {
+    gap: 10px;
+  }
+  
+  .candidate-form-field input,
+  .candidate-form-field select {
+    height: 36px;
+    font-size: 12px;
+    padding: 8px;
+  }
+  
+  .candidate-form-declaration {
+    margin: 16px 0 10px 0;
+  }
+  
+  .candidate-form-declaration label {
+    font-size: 13px;
+    gap: 6px;
+  }
+  
+  .candidate-form-declaration span {
+    white-space: normal;
+  }
+  
+  .candidate-form-error {
+    font-size: 12px;
+  }
+  
+  .candidate-form-actions {
+    margin-top: 16px;
+    gap: 8px;
+  }
+  
+  .candidate-form-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .custom-file-label {
+    padding: 8px;
+    font-size: 12px;
+    min-height: 36px;
+  }
+  
+  .file-selected {
+    font-size: 11px;
+  }
+}
+
+/* Responsive design - Very small screens */
+@media (max-width: 360px) {
+  .candidate-form-overlay {
+    padding: 4px;
+  }
+  
+  .candidate-form {
+    width: 99vw;
+    max-height: 99vh;
+  }
+  
+  .candidate-form-content {
+    padding: 12px;
+    max-height: calc(99vh - 60px);
+  }
+  
+  .candidate-form-header {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .candidate-form-close-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+  }
+  
+  .candidate-form-fields {
+    gap: 8px;
+  }
+  
+  .candidate-form-field input,
+  .candidate-form-field select {
+    height: 32px;
+    font-size: 11px;
+    padding: 6px;
+  }
+  
+  .candidate-form-declaration {
+    margin: 12px 0 8px 0;
+  }
+  
+  .candidate-form-declaration label {
+    font-size: 12px;
+  }
+  
+  .candidate-form-error {
+    font-size: 11px;
+  }
+  
+  .candidate-form-actions {
+    margin-top: 12px;
+  }
+  
+  .candidate-form-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .custom-file-label {
+    padding: 6px;
+    font-size: 11px;
+    min-height: 32px;
+  }
+  
+  .file-selected {
+    font-size: 10px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .candidate-form-overlay {
+    padding: 8px;
+  }
+  
+  .candidate-form {
+    max-height: 95vh;
+  }
+  
+  .candidate-form-content {
+    padding: 16px;
+    max-height: calc(95vh - 60px);
+  }
+  
+  .candidate-form-header {
+    padding: 8px 20px;
+  }
+  
+  .candidate-form-fields {
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  .candidate-form-field {
+    flex: 1 1 30%;
+  }
+  
+  .candidate-form-declaration {
+    margin: 12px 0 8px 0;
+  }
+  
+  .candidate-form-actions {
+    margin-top: 12px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .candidate-form {
+    border-width: 0.5px;
+  }
+  
+  .candidate-form-field input,
+  .candidate-form-field select,
+  .custom-file-label {
+    border-width: 0.75px;
+  }
+} 

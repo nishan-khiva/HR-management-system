@@ -1,0 +1,194 @@
+/* Attendance Table Styles */
+.attendance-table-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 24px 16px 16px 16px;
+  font-family: 'Nunito';
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 900px;
+  font-family: 'Nunito';
+}
+
+.attendance-table th {
+  background: #4D007D;
+  color: #fff;
+  padding: 18px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Nunito';
+  font-size: 14px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.attendance-table th:first-child {
+  border-top-left-radius: 16px;
+}
+
+.attendance-table th:last-child {
+  border-top-right-radius: 16px;
+}
+
+.attendance-table td {
+  padding: 18px 16px;
+  color: #333;
+  font-family: 'Nunito';
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.attendance-table tr:hover td {
+  background-color: #f8f9fa;
+  color: #4B1979;
+}
+
+.attendance-table tr:last-child td {
+  border-bottom: none;
+}
+
+.attendance-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.attendance-table tr:hover .attendance-profile-img {
+  border-color: #4B1979;
+  transform: scale(1.05);
+}
+
+.attendance-status-btn {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 4px 16px;
+  background: #fff;
+  color: #388e3c;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.attendance-status-btn.absent {
+  color: #f44336;
+  border-color: #f44336;
+}
+
+.attendance-status-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+  min-width: 120px;
+  margin-top: 4px;
+  animation: fadeIn 0.2s ease;
+}
+
+.attendance-status-option {
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #4B1979;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.attendance-status-option:last-child {
+  border-bottom: none;
+}
+
+.attendance-status-option:hover {
+  background: #f8f9fa;
+}
+
+.attendance-action-menu-container {
+  position: relative;
+}
+
+.attendance-action-menu {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 10;
+  min-width: 120px;
+  border: 1px solid #eee;
+  animation: fadeIn 0.2s ease;
+}
+
+.attendance-action-menu-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.attendance-action-menu-item:last-child {
+  border-bottom: none;
+}
+
+.attendance-action-menu-item:hover {
+  background-color: #f8f9fa;
+}
+
+.attendance-action-menu-item.delete {
+  color: #f44336;
+}
+
+.attendance-action-menu-item.delete:hover {
+  background-color: #ffebee;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search input styling */
+.search-input {
+  width: 240px;
+  height: 38px;
+  border-width: 1px;
+  border-radius: 50px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  border: 1px solid #ddd;
+  opacity: 1;
+  transition: border-color 0.2s ease;
+  font-family: 'Nunito';
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4B1979;
+} 

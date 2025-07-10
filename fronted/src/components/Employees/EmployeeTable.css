@@ -1,0 +1,172 @@
+/* Employees Table Container */
+.employees-table-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 24px 16px;
+  font-family: 'Nunito', sans-serif;
+  border: 1px solid #e8e8e8;
+  overflow-x: auto;
+}
+
+/* Table */
+.employees-table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Table Header */
+.employees-table th {
+  background: #4D007D;
+  color: #fff;
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.employees-table th:first-child {
+  border-top-left-radius: 16px;
+}
+
+.employees-table th:last-child {
+  border-top-right-radius: 16px;
+  text-align: center;
+}
+
+/* Table Body */
+.employees-table td {
+  padding: 12px 12px;
+  color: #333;
+  font-size: 13px;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s ease;
+}
+
+.employees-table tr:hover td {
+  background-color: #f8f9fa;
+  color: #4B1979;
+}
+
+.employees-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Profile Image */
+.employees-profile-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.employees-table tr:hover .employees-profile-img {
+  border-color: #4B1979;
+  transform: scale(1.05);
+}
+
+/* Action Menu Container */
+.emp-action-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Action Button */
+.action-menu-btn {
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #666;
+  font-size: 18px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  min-width: 28px;
+  height: 28px;
+}
+
+/* Dropdown Menu */
+.emp-action-menu {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  z-index: 99999;
+  min-width: 140px;
+  border: 1px solid #e8e8e8;
+  animation: fadeIn 0.2s ease;
+  overflow: hidden;
+}
+
+/* Dropdown Items */
+.emp-action-menu-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.2s ease;
+  font-family: 'Nunito', sans-serif;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.emp-action-menu-item:last-child {
+  border-bottom: none;
+}
+
+.emp-action-menu-item:hover {
+  background-color: #f8f9fa;
+  color: #4D007D;
+}
+
+.emp-action-menu-item.delete {
+  color: #f44336;
+}
+
+.emp-action-menu-item.delete:hover {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive (Optional) */
+@media screen and (max-width: 768px) {
+  .employees-table-container {
+    margin: 16px 8px;
+  }
+
+  .employees-table {
+    min-width: 768px;
+  }
+
+  .emp-action-menu {
+    right: 16px !important;
+    left: auto !important;
+  }
+} 

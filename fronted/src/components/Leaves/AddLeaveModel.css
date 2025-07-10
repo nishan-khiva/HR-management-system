@@ -1,0 +1,240 @@
+/* Overlay */
+.addleave-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.addleave-overlay.closing {
+  opacity: 0;
+}
+
+/* Form */
+.addleave-form {
+  background: #fff;
+  border-radius: 16px;
+  width: 900px;
+  max-width: 98vw;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(75, 25, 121, 0.08);
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Header */
+.addleave-header {
+  background: #4B1979;
+  color: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 20px 32px;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addleave-close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.addleave-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content */
+.addleave-content {
+  padding: 36px 32px 32px 32px;
+}
+
+.addleave-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 20px;
+  margin-bottom: 12px;
+}
+
+.addleave-field {
+  flex: 1 1 45%;
+  min-width: 220px;
+  position: relative;
+}
+
+.addleave-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #4B1979;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fff;
+  box-sizing: border-box;
+  height: 48px;
+}
+
+.addleave-field input:focus {
+  outline: none;
+  border-color: #4B1979;
+  box-shadow: 0 0 0 2px rgba(75, 25, 121, 0.08);
+}
+
+/* Placeholder styling */
+.addleave-field input::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+.addleave-field input[placeholder*="*"]::placeholder {
+  color: #d32f2f;
+  opacity: 0.9;
+}
+
+/* Date field icon */
+.date-field {
+  position: relative;
+}
+.date-field .icon-right {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4B1979;
+  pointer-events: none;
+  font-size: 20px;
+}
+
+/* File input */
+.file-input-container {
+  position: relative;
+}
+.custom-file-label {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #4B1979;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: #222;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+}
+.custom-file-label:focus-within {
+  outline: none;
+  border-color: #4B1979;
+  box-shadow: 0 0 0 2px rgba(75, 25, 121, 0.08);
+}
+.hidden-file-input {
+  display: none;
+}
+.upload-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  color: #4B1979;
+  font-size: 20px;
+}
+.file-selected {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #4B1979;
+  font-style: italic;
+  word-break: break-all;
+}
+
+.reason-field {
+  flex: 1 1 100%;
+}
+
+.addleave-error {
+  color: #d32f2f;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.addleave-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.addleave-btn {
+  padding: 14px 36px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 16px;
+  background: #4B1979;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(75, 25, 121, 0.08);
+}
+.addleave-btn:disabled {
+  background: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .addleave-form {
+    width: 98vw;
+    min-width: 0;
+  }
+  .addleave-content {
+    padding: 24px 8px 16px 8px;
+  }
+  .addleave-fields {
+    gap: 16px 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .addleave-fields {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .addleave-field {
+    flex: 1 1 100%;
+  }
+  .addleave-header {
+    padding: 14px 10px;
+    font-size: 18px;
+  }
+} 

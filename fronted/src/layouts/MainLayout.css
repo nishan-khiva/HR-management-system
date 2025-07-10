@@ -1,0 +1,188 @@
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fa;
+  width: 100%;
+  gap: 0;
+  align-items: flex-start;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  padding: 0;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* .main-content {
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  min-height: 100vh;
+  padding: 0;
+  background: #f8f9fa;
+}  */
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: #4D007D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: #39025b;
+  transform: scale(1.05);
+}
+
+.mobile-menu-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+}
+
+/* Responsive design - Tablets */
+@media (max-width: 1024px) {
+  .main-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+  }
+}
+
+/* Responsive design - Mobile and small tablets */
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 60px;
+  }
+  
+  .mobile-overlay {
+    display: block;
+  }
+  
+  /* When sidebar is open on mobile */
+  .main-layout.sidebar-open .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .main-layout.sidebar-open .mobile-overlay {
+    opacity: 1;
+  }
+}
+
+/* Responsive design - Small mobile phones */
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 50px;
+  }
+  
+  .mobile-menu-toggle {
+    top: 15px;
+    left: 15px;
+    padding: 10px;
+  }
+  
+  .mobile-menu-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-content {
+    padding-top: 50px;
+  }
+  
+  .mobile-menu-toggle {
+    top: 10px;
+    left: 10px;
+    padding: 8px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mobile-menu-toggle {
+    border-width: 0.5px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .main-content,
+  .mobile-menu-toggle,
+  .mobile-overlay {
+    transition: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .main-layout {
+    background: #1a1a1a;
+  }
+  
+  .main-content {
+    background: #1a1a1a;
+  }
+  
+  .mobile-menu-toggle {
+    background: #4D007D;
+    color: white;
+  }
+  
+  .mobile-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
