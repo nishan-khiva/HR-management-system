@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const candidateController = require('../Controller/CandidateController');
-const upload = require('../Middleware/upload'); // Multer Cloudinary config
+const upload = require('../middleware/upload'); // Multer Cloudinary config
 
 router.post('/create', upload.single('resume'), candidateController.createCandidate); //  http://localhost:5000/api/candidates/create
 
