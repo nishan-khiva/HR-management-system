@@ -1,4 +1,4 @@
-const Leave = require('../Models/Leaves');
+const Leave = require('../models/Leaves');
 const Employee = require('../models/Employee');
 
 // Create Leave
