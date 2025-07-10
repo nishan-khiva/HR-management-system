@@ -5,10 +5,10 @@ import api from '../../../Api/axiosInstance';
 
 const RegisterForm = ({ switchToLogin }) => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    fullname: '',
     email: '',
     password: '',
-    confirmpassword: ''
+    confirmPassword: ''
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +25,7 @@ const RegisterForm = ({ switchToLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmpassword) {
+    if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match');
       return;
     }
@@ -54,9 +54,9 @@ const RegisterForm = ({ switchToLogin }) => {
         <input
           type="text"
           id="fullname"
-          name="fullName"
+          name="fullname"
           placeholder="Full Name"
-          value={formData.fullName}
+          value={formData.fullname}
           onChange={handleChange}
           required
         />
@@ -98,16 +98,16 @@ const RegisterForm = ({ switchToLogin }) => {
         </div>
 
         {/* Confirm Password */}
-        <label htmlFor="confirmpassword">
+        <label htmlFor="confirmPassword">
           Confirm Password<span>*</span>
         </label>
         <div className="password-wrapper">
           <input
             type={showConfirm ? 'text' : 'password'}
-            id="confirmpassword"
-            name="confirmpassword"
+            id="confirmPassword"
+            name="confirmPassword"
             placeholder="Confirm Password"
-            value={formData.confirmpassword}
+            value={formData.confirmPassword}
             onChange={handleChange}
             required
           />
