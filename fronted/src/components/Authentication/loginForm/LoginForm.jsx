@@ -8,8 +8,8 @@ import api from '../../../Api/axiosInstance'
 const LoginForm = ({ switchToRegister }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+  email: 'nishan@gmail.com',
+    password: '1234'
   });
   const [error, setError] = useState('');
   const navigate = useNavigate();
